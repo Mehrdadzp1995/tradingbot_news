@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+import os
+
 from lumibot.brokers import Alpaca
 from lumibot.backtesting import YahooDataBacktesting
 from lumibot.strategies.strategy import Strategy
@@ -7,8 +10,10 @@ from alpaca_trade_api import REST
 from timedelta import Timedelta 
 from finbert_utils import estimate_sentiment
 
-API_KEY = "PK1KCYG02ESR3FYF2WDK"
-API_SECRET = "J44KTg6jzYNvOozVAhZTcs1PocZ3Nk4Rli9c8NmU"
+
+load_dotenv()
+API_KEY = os.getenv('API_KEY')
+API_SECRET = os.getenv('API_SECRET')
 BASE_URL = "https://paper-api.alpaca.markets"
 
 ALPACA_CREDS = {
@@ -79,8 +84,8 @@ class MLTrader(Strategy):
                 self.submit_order(order) 
                 self.last_trade = "sell"
 
-start_date = datetime(2023,11,1)
-end_date = datetime(2024,1,19) 
+start_date = datetime(2024,1,1)
+end_date = datetime(2024,2,3) 
 broker = Alpaca(ALPACA_CREDS) 
 strategy = MLTrader(name='mlstrat', broker=broker, 
                     parameters={"symbol":"SPY", 

@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+import os
+
 from datetime import datetime, timedelta
 from alpaca_trade_api import REST
 from datetime import datetime
@@ -15,29 +18,42 @@ def get_news(api, symbol, get_datetime):
     news_headlines = [ev.__dict__["_raw"]["headline"] for ev in news_items]
     return news_headlines
 
+
+load_dotenv()
+API_KEY = os.getenv('API_KEY')
+API_SECRET = os.getenv('API_SECRET')
+BASE_URL = "https://paper-api.alpaca.markets"
+
+ALPACA_CREDS = {
+    "API_KEY":API_KEY, 
+    "API_SECRET": API_SECRET, 
+    "PAPER": True
+}
+
+
+
 # Example usage
-api = REST(base_url="https://paper-api.alpaca.markets", key_id="PK1KCYG02ESR3FYF2WDK", secret_key="J44KTg6jzYNvOozVAhZTcs1PocZ3Nk4Rli9c8NmU")
+api = REST(base_url=BASE_URL, key_id=API_KEY, secret_key=API_SECRET)
 symbol = "SPY"
 
 # Define a function for getting the current datetime
 def current_datetime():
-    return datetime(2023,12,15)
+    #return datetime(2024,2,4)
+    ## Returns the current local datetime
+    return datetime.now()
+print(current_datetime())
 
 # Get and display the news
 news_list = get_news(api, symbol, current_datetime)
-print(news_list)
-
-print(current_datetime())
-#start_date = datetime(2024,1,10)
-#print(start_date)
+#print(news_list)
 
 def get_sentiment(news_list):
     probability, sentiment = estimate_sentiment(news_list)
     return probability , sentiment
 
-#for news in news_list:
-#    print(news)
-#    print(estimate_sentiment(news))
+for news in news_list:
+    print(news)
+    print(estimate_sentiment(news))
 
 
 
