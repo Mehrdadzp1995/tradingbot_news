@@ -19,16 +19,15 @@ Before you can run MLTrader Bot, you need to have the following installed:
 - Alpaca trade API
 - `lumibot` framework for trading strategies
 - `finbert` for sentiment analysis
+  from these link : https://huggingface.co/ProsusAI/finbert
 
 ## Setup
 
 1. **Clone the Repository**: Clone this repository to your local machine.
 
 2. **Install Dependencies**: Install the required Python packages using `pip`:
-   ```
-   pip install python-dotenv alpaca-trade-api lumibot
-   ```
 
+ 
 3. **Configure API Keys**: Sign up for an Alpaca account and obtain your API key and secret. Create a `.env` file in the root of the project and add your API keys:
    ```
    API_KEY='your_api_key'
