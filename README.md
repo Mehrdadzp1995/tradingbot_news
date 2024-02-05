@@ -1,8 +1,8 @@
 
 ## Active development and improvements are underway. Your feedback and contributions are welcome!
-# MLTrader Bot
+# Tradingbot with news
 
-MLTrader Bot is a sophisticated trading bot designed to automate stock trading decisions based on market news sentiment analysis. Utilizing the Alpaca API for trading and market data, the bot performs sentiment analysis on recent news articles to make buy or sell decisions. This README outlines the bot's functionality, setup instructions, and usage.
+This Bot is a sophisticated trading bot designed to automate stock trading decisions based on market news sentiment analysis. Utilizing the Alpaca API for trading and market data, the bot performs sentiment analysis on recent news articles to make buy or sell decisions. This README outlines the bot's functionality, setup instructions, and usage.
 
 ## Features
 
