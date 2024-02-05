@@ -26,7 +26,7 @@ Before you can run MLTrader Bot, you need to have the following installed:
 
 2. **Install Dependencies**: Install the required Python packages using `pip`:
    ```
-   pip install python-dotenv alpaca-trade-api lumibot finbert-utils
+   pip install python-dotenv alpaca-trade-api lumibot
    ```
 
 3. **Configure API Keys**: Sign up for an Alpaca account and obtain your API key and secret. Create a `.env` file in the root of the project and add your API keys:
@@ -41,10 +41,10 @@ Before you can run MLTrader Bot, you need to have the following installed:
 
 To run the bot, execute the script from your terminal:
 ```
-python path/to/your_script.py
+python path/to/tradingbot.py
 ```
 
-By default, the bot performs a backtest using historical data. To switch to live trading, uncomment the relevant sections in the script and ensure you are using a funded Alpaca account.
+By default, the bot performs a backtest using historical data. To switch to live trading, uncomment the relevant sections in the last lines of tradingbot.py and ensure you are using a funded Alpaca account.
 
 ## How It Works
 
